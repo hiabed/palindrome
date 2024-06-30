@@ -2,7 +2,7 @@ const button = document.querySelector("#check-btn");
 const textInput = document.querySelector("#text-input");
 const paragraph = document.querySelector("#result");
 
-button.onclick = function check()
+function check()
 {
     let punctuation = /[.,\/#!$%\^&\*;:{}=\-_`~() ]/;
     let str = textInput.value.split(punctuation).join('');
@@ -17,4 +17,14 @@ button.onclick = function check()
         else
             paragraph.innerHTML = `<b>${string}</b> is not a palindrome.`
     }
+    textInput.value = '';
 }
+
+function keyPress(event)
+{
+    if (event.key === 'Enter')
+        check();
+}
+
+button.onclick = check;
+textInput.addEventListener('keydown', keyPress);
