@@ -1,15 +1,20 @@
 const button = document.querySelector("#check-btn");
 const textInput = document.querySelector("#text-input");
-const paragraph = document.querySelector("p");
+const paragraph = document.querySelector("#result");
 
 button.onclick = function check()
 {
-    let str = textInput.value;
+    let punctuation = /[.,\/#!$%\^&\*;:{}=\-_`~()]/;
+    let str = textInput.value.split(punctuation).join('');
+    const string = textInput.value;
     let rev = str.split('').reverse().join('');
-    if (str === "") alert("Please input a value");
-    if (rev === str)
-        paragraph.innerText = `${str} is a palindrome.`
+    if (str === "")
+        alert("Please input a value");
     else
-        paragraph.innerText = `${str} is not a palindrome.`
-
+    {
+        if (rev.toLowerCase() === str.toLowerCase())
+            paragraph.innerHTML = `<span style="font-weight: bold">${string}</span> is a palindrome.`
+        else
+            paragraph.innerHTML = `<b>${string}</b> is not a palindrome.`
+    }
 }

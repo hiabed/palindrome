@@ -1,3 +1,30 @@
 html {
     background-color: whitesmoke;
 }
+
+h1 {
+    text-align: center;
+}
+
+#parent {
+    border: 2px solid black;
+    min-width: fit-content;
+    max-width: 40%;
+    margin: 0 auto;
+    /* text-align: center; */
+}
+
+#child {
+    /* border: 1px solid purple; */
+    min-width: fit-content;
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.input_paragraph {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
