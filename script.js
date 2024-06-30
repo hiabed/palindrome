@@ -4,7 +4,7 @@ const paragraph = document.querySelector("#result");
 
 button.onclick = function check()
 {
-    let punctuation = /[.,\/#!$%\^&\*;:{}=\-_`~()]/;
+    let punctuation = /[.,\/#!$%\^&\*;:{}=\-_`~() ]/;
     let str = textInput.value.split(punctuation).join('');
     const string = textInput.value;
     let rev = str.split('').reverse().join('');
