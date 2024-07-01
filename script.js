@@ -7,7 +7,7 @@ function check()
     let punctuation = /[.,\/#!$%\^&\*;:{}=\-_`~() ]/;
     let str = textInput.value.split(punctuation).join('');
     const string = textInput.value;
-    let rev = str.split('').reverse().join('');
+    let rev = str.split('').reverse().join('');  // eyE
     if (str === "")
         alert("Please input a value");
     else
@@ -26,5 +26,5 @@ function keyPress(event)
         check();
 }
 
-button.onclick = check;
+button.addEventListener('click', check);
 textInput.addEventListener('keydown', keyPress);
